@@ -18,17 +18,17 @@ export function useFilters(defaultFilters = { search: null }) {
           page: parseInt(query.page || 1),
           perPage: parseInt(query.perPage || 20),
         }
-      : defaultFilters
+      : defaultFilters,
   );
 
   const onFilters = useCallback((name, value) => {
-    setFilters((prevState) => ({
+    setFilters(prevState => ({
       ...prevState,
       [name]: value,
     }));
   }, []);
 
-  const onRefresh = debounce((filters) => {
+  const onRefresh = debounce(filters => {
     router.visit(route(route().current()), {
       preserveState: true,
       preserveScroll: true,

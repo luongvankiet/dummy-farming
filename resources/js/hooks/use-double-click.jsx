@@ -13,7 +13,7 @@ export function useDoubleClick({ click, doubleClick, timeout = 250 }) {
   };
 
   return useCallback(
-    (event) => {
+    event => {
       clearClickTimeout();
       if (click && event.detail === 1) {
         clickTimeout.current = setTimeout(() => {
@@ -24,6 +24,6 @@ export function useDoubleClick({ click, doubleClick, timeout = 250 }) {
         doubleClick(event);
       }
     },
-    [click, doubleClick, timeout]
+    [click, doubleClick, timeout],
   );
 }

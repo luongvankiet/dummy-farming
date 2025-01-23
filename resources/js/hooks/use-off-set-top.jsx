@@ -9,7 +9,7 @@ export function useOffSetTop(top = 0, options) {
   const [value, setValue] = useState(false);
 
   const onOffSetTop = useCallback(() => {
-    scrollY.on('change', (scrollHeight) => {
+    scrollY.on('change', scrollHeight => {
       if (scrollHeight > top) {
         setValue(true);
       } else {

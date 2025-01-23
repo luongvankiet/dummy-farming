@@ -21,12 +21,11 @@ export function useEventListener(eventName, handler, element, options) {
     }
 
     // Create event listener that calls handler function stored in ref
-    const eventListener = (event) => savedHandler.current(event);
+    const eventListener = event => savedHandler.current(event);
 
     targetElement.addEventListener(eventName, eventListener, options);
 
     // Remove event listener on cleanup
-    // eslint-disable-next-line consistent-return
     return () => {
       targetElement.removeEventListener(eventName, eventListener);
     };

@@ -9,7 +9,7 @@ export function useLocalStorage(key, initialState) {
     const restored = getStorage(key);
 
     if (restored) {
-      setState((prevValue) => ({
+      setState(prevValue => ({
         ...prevValue,
         ...restored,
       }));
@@ -17,8 +17,8 @@ export function useLocalStorage(key, initialState) {
   }, [key]);
 
   const updateState = useCallback(
-    (updateValue) => {
-      setState((prevValue) => {
+    updateValue => {
+      setState(prevValue => {
         setStorage(key, {
           ...prevValue,
           ...updateValue,
@@ -30,7 +30,7 @@ export function useLocalStorage(key, initialState) {
         };
       });
     },
-    [key]
+    [key],
   );
 
   const update = useCallback(
@@ -39,7 +39,7 @@ export function useLocalStorage(key, initialState) {
         [name]: updateValue,
       });
     },
-    [updateState]
+    [updateState],
   );
 
   const reset = useCallback(() => {
@@ -56,7 +56,7 @@ export function useLocalStorage(key, initialState) {
 
 // ----------------------------------------------------------------------
 
-export const getStorage = (key) => {
+export const getStorage = key => {
   let value = null;
 
   try {
@@ -80,7 +80,7 @@ export const setStorage = (key, value) => {
   }
 };
 
-export const removeStorage = (key) => {
+export const removeStorage = key => {
   try {
     window.localStorage.removeItem(key);
   } catch (error) {
