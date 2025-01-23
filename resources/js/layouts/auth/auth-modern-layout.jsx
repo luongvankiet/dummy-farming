@@ -51,11 +51,8 @@ export default function AuthLayout({ children, image, title }) {
           <Box
             component="img"
             alt="auth"
-            src={
-              image ||
-              `${APP_URL}/assets/illustrations/illustration_dashboard.png`
-            }
-            sx={{ maxWidth: 720 }}
+            src={image || `${APP_URL}/assets/illustrations/illustration_2.png`}
+            sx={{ maxWidth: 720, borderRadius: 2 }}
           />
         </Stack>
       )}

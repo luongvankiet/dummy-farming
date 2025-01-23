@@ -166,6 +166,6 @@ export default function Login({ canResetPassword, status }) {
 }
 
 Login.propTypes = {
-  canResetPassword: PropTypes.boolean,
+  canResetPassword: PropTypes.bool,
   status: PropTypes.string,
 };

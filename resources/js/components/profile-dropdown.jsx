@@ -26,7 +26,7 @@ const ProfileDropdown = () => {
   const popover = usePopover();
 
   const handleLogout = () => {
-    router.get(route(routes.auth.logout));
+    router.post(route(routes.auth.logout));
   };
 
   const handleClickItem = path => {

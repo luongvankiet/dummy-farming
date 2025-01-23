@@ -10,6 +10,9 @@ export default defineConfig({
     }),
     react(),
   ],
+  server: {
+    host: 'dummy-farming.test',
+  },
   resolve: {
     alias: {
       '@': '/resources/js',
